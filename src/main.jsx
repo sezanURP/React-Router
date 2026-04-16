@@ -5,6 +5,7 @@ import { createBrowserRouter} from 'react-router'
 import { RouterProvider } from 'react-router/dom'
 import Root from './Layout/Root'
 import Home from './Pages/Home'
+import FriendDetails from './Pages/FriendDetails'
 
 const router =createBrowserRouter([
   {
@@ -14,7 +15,13 @@ const router =createBrowserRouter([
       {
         index: true,
         element: <Home/>
+      },
+      {
+        path: "/friend/:id",
+        element: <FriendDetails/>,
+        loader: ()=>fetch("/FriendsData.json")
       }
+
     ]
 
   }

@@ -2,6 +2,7 @@ import React from "react";
 import { ImStatsDots } from "react-icons/im";
 import { IoHome } from "react-icons/io5";
 import { MdAccessTimeFilled } from "react-icons/md";
+import { Link } from "react-router";
 
 const NavBar = () => {
   return (
@@ -13,13 +14,13 @@ const NavBar = () => {
         <div className="flex-none">
           <ul className="menu menu-horizontal  gap-3">
             <li>
-              <button className="btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md"><IoHome /> Home</button>
+              <Link className="btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md "><IoHome /> Home</Link>
             </li>
             <li>
-              <button className="btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md"><MdAccessTimeFilled /> Timeline</button>
+              <Link  className="btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md"><MdAccessTimeFilled /> Timeline</Link>
             </li>
             <li>
-               <button className="btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md"><ImStatsDots /> Stats</button>
+               <Link className="btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md"><ImStatsDots /> Stats</Link>
             </li>
           </ul>
         </div>
