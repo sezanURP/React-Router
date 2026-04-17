@@ -18,11 +18,9 @@ const FriendDetails = () => {
   const expectedFriend = friendData.find((f) => f.id == id);
   return (
     <div>
-      <div className="max-w-6xl mx-auto p-4 md:p-6">
+      <div className="max-w-6xl mx-auto p-4 mt-10 md:p-6">
         <div className="grid grid-cols-12  gap-6">
-
           <div className="col-span-3">
-
             <div className="lg:-span-3 bg-white rounded-3xl p-6 shadow-sm">
               <div className="flex flex-col items-center text-center">
                 <img
@@ -56,18 +54,17 @@ const FriendDetails = () => {
               </div>
             </div>
 
-
             <div className="mt-5">
-              <div className="bg-white rounded-3xl p-6 shadow-sm space-y-3">
-                <button className="w-full flex items-center gap-3 text-left px-5 py-2 hover:bg-gray-200 rounded-2xl transition">
+              <div className="bg-white rounded-3xl p-6 space-y-3">
+                <button className="w-full flex items-center shadow-sm hover:shadow-md gap-3 text-left px-5 py-4 hover:bg-gray-200 rounded-2xl transition">
                   <MdSnooze className="text-xl text-gray-600" />
                   <span>Snooze 2 Weeks</span>
                 </button>
-                <button className="w-full flex items-center gap-3 text-left px-5 py-2 hover:bg-gray-200 rounded-2xl transition">
+                <button className="w-full flex  shadow-sm hover:shadow-md items-center gap-3 text-left px-5 py-4 hover:bg-gray-200 rounded-2xl transition">
                   <MdArchive className="text-xl text-gray-600" />
                   <span>Archive</span>
                 </button>
-                <button className="w-full flex items-center gap-3 text-left px-5 py-2 hover:bg-red-200 text-red-600 rounded-2xl transition">
+                <button className="w-full flex shadow-sm hover:shadow-md items-center gap-3 text-left px-5 py-4 hover:bg-red-200 text-red-600 rounded-2xl transition">
                   <MdDelete className="text-xl" />
                   <span>Delete</span>
                 </button>
@@ -75,9 +72,9 @@ const FriendDetails = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-9 space-y-6">
+          <div className="lg:col-span-9 space-y-8">
             <div className="grid grid-cols-3 gap-4">
-              <div className="bg-white rounded-3xl p-6 text-center shadow-sm">
+              <div className="bg-white rounded-3xl p-6 py-8 text-center shadow-sm">
                 <p className="text-4xl font-bold text-emerald-700">
                   {expectedFriend.days_since_contact}
                 </p>
@@ -121,8 +118,8 @@ const FriendDetails = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 bg-white rounded-3xl p-6 shadow-sm w-full md:grid-cols-2 ">
-              <div >
+            <div className="grid col-span-9 bg-white rounded-3xl items-center-center p-6 shadow-sm w-full md:grid-cols-2 ">
+              <div>
                 <h3 className="font-semibold mb-4">Quick Check-In</h3>
                 <div className="grid grid-cols-3 gap-4">
                   <button
