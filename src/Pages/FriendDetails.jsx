@@ -19,41 +19,63 @@ const FriendDetails = () => {
   return (
     <div>
       <div className="max-w-6xl mx-auto p-4 md:p-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-12  gap-6">
 
-          <div className="lg:col-span-1 bg-white rounded-3xl p-6 shadow-sm">
-            <div className="flex flex-col items-center text-center">
-              <img
-                src={expectedFriend.picture}
-                alt={expectedFriend.name}
-                className="w-32 h-32 rounded-full object-cover ring-8 ring-white shadow-md mb-5"
-              />
+          <div className="col-span-3">
 
-              <h1 className="text-2xl font-semibold text-gray-800">
-                {expectedFriend.name}
-              </h1>
+            <div className="lg:-span-3 bg-white rounded-3xl p-6 shadow-sm">
+              <div className="flex flex-col items-center text-center">
+                <img
+                  src={expectedFriend.picture}
+                  alt={expectedFriend.name}
+                  className="w-32 h-32 rounded-full object-cover ring-8 ring-white shadow-md mb-5"
+                />
 
-              <span className="mt-3 inline-block bg-red-500 text-white text-sm font-semibold px-5 py-1.5 rounded-full">
-                Overdue
-              </span>
+                <h1 className="text-2xl font-semibold text-gray-800">
+                  {expectedFriend.name}
+                </h1>
 
-              <span className="mt-3 inline-block bg-emerald-100 text-emerald-700 text-sm font-medium px-5 py-1 rounded-full">
-                {expectedFriend.tags[0] || "FAMILY"}
-              </span>
+                <span className="mt-3 inline-block bg-red-500 text-white text-sm font-semibold px-5 py-1.5 rounded-full">
+                  Overdue
+                </span>
 
-              <p className="mt-6 text-gray-600 italic text-sm">
-                "{expectedFriend.bio}"
-              </p>
+                <span className="mt-3 inline-block bg-emerald-100 text-emerald-700 text-sm font-medium px-5 py-1 rounded-full">
+                  {expectedFriend.tags[0] || "FAMILY"}
+                </span>
 
-              <p className="text-gray-500 text-sm mt-4">
-                Preferred: 
-                <span className="text-gray-800 font-medium">{expectedFriend.email}</span>
-              </p>
+                <p className="mt-6 text-gray-600 italic text-sm">
+                  "{expectedFriend.bio}"
+                </p>
+
+                <p className="text-gray-500 text-sm mt-4">
+                  Preferred:
+                  <span className="text-gray-800 font-medium">
+                    {expectedFriend.email}
+                  </span>
+                </p>
+              </div>
+            </div>
+
+
+            <div className="mt-5">
+              <div className="bg-white rounded-3xl p-6 shadow-sm space-y-3">
+                <button className="w-full flex items-center gap-3 text-left px-5 py-2 hover:bg-gray-200 rounded-2xl transition">
+                  <MdSnooze className="text-xl text-gray-600" />
+                  <span>Snooze 2 Weeks</span>
+                </button>
+                <button className="w-full flex items-center gap-3 text-left px-5 py-2 hover:bg-gray-200 rounded-2xl transition">
+                  <MdArchive className="text-xl text-gray-600" />
+                  <span>Archive</span>
+                </button>
+                <button className="w-full flex items-center gap-3 text-left px-5 py-2 hover:bg-red-200 text-red-600 rounded-2xl transition">
+                  <MdDelete className="text-xl" />
+                  <span>Delete</span>
+                </button>
+              </div>
             </div>
           </div>
 
-          <div className="lg:col-span-2 space-y-6">
-
+          <div className="lg:col-span-9 space-y-6">
             <div className="grid grid-cols-3 gap-4">
               <div className="bg-white rounded-3xl p-6 text-center shadow-sm">
                 <p className="text-4xl font-bold text-emerald-700">
@@ -99,24 +121,8 @@ const FriendDetails = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              
-              <div className="bg-white rounded-3xl p-6 shadow-sm space-y-3">
-                <button className="w-full flex items-center gap-3 text-left px-5 py-4 hover:bg-gray-200 rounded-2xl transition">
-                  <MdSnooze className="text-xl text-gray-600" />
-                  <span>Snooze 2 Weeks</span>
-                </button>
-                <button className="w-full flex items-center gap-3 text-left px-5 py-4 hover:bg-gray-200 rounded-2xl transition">
-                  <MdArchive className="text-xl text-gray-600" />
-                  <span>Archive</span>
-                </button>
-                <button className="w-full flex items-center gap-3 text-left px-5 py-4 hover:bg-red-200 text-red-600 rounded-2xl transition">
-                  <MdDelete className="text-xl" />
-                  <span>Delete</span>
-                </button>
-              </div>
-
-              <div className="bg-white rounded-3xl p-6 shadow-sm">
+            <div className="grid grid-cols-1 bg-white rounded-3xl p-6 shadow-sm w-full md:grid-cols-2 ">
+              <div >
                 <h3 className="font-semibold mb-4">Quick Check-In</h3>
                 <div className="grid grid-cols-3 gap-4">
                   <button

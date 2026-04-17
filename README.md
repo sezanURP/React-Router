@@ -1,16 +1,39 @@
-# React + Vite
+# KeenKeeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+KeenKeeper is a thoughtfully designed Personal Relationship Management (PRM) dashboard that helps you nurture your meaningful connections. It acts as your personal social shelf, allowing you to track interactions, categorize friends with custom tags (e.g., Work, Family), and monitor connection health. With smart visual indicators like "On Track," "Almost Due," and "Overdue," KeenKeeper ensures you never lose touch with the people who matter most.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+## Technology uses in this services:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Artificial Intiligence
+- Javascript 
+- React 
+- Tailwind CSS
+- DaisyUi
+- Vite
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## The features of this platform
+
+#### 1. Quick Check-In System
+This feature allows users to log an interaction with a friend instantly, right from their profile, with a single click.
+
+How it works: By clicking the "Call", "Text", or "Video" buttons, the interaction data is immediately saved to the timeline.
+
+Benefits: It eliminates the friction of manual data entry, making it effortless to keep records up to date. The addition of "Success Messages" (Toast Notifications) provides immediate, satisfying feedback, greatly enhancing the user experience.
+
+#### 2. Dynamic Timeline with Real-Time Filtering
+The timeline is designed to render interactions chronologically and updates instantly as new data is added.
+
+How it works: It displays each logged interaction using clean, professional icons (React Icons) and clear formatting.
+
+Benefits: The real power lies in the dropdown filter. Users can instantly isolate specific types of interactions (e.g., viewing only calls or only texts) without reloading the page. This makes finding specific communication history incredibly fast and intuitive.
+
+#### 3. Visual Analytics Dashboard
+This feature provides users with a clear, visual breakdown of their communication habits and relationship health.
+
+How it works: Utilizing the Recharts library, it generates a sleek, responsive Donut chart. This chart automatically calculates data from the timeline to show the exact breakdown of communication methods (Call vs. Text vs. Video).
+
+Benefits: This at-a-glance visualization helps users understand how they connect with their network. It can highlight if they are relying too heavily on texting and might need to schedule more calls or video chats, ultimately helping them manage their relationships more effectively.
+
