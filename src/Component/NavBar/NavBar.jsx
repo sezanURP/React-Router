@@ -2,7 +2,7 @@ import React from "react";
 import { ImStatsDots } from "react-icons/im";
 import { IoHome } from "react-icons/io5";
 import { MdAccessTimeFilled } from "react-icons/md";
-import { Link } from "react-router";
+import {  NavLink } from "react-router";
 
 const NavBar = () => {
   return (
@@ -14,13 +14,13 @@ const NavBar = () => {
         <div className="flex-none">
           <ul className="menu menu-horizontal  gap-3">
             <li>
-              <Link className="btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md "><IoHome /> Home</Link>
+              <NavLink to={"/"} className="btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md "><IoHome /> Home</NavLink>
             </li>
             <li>
-              <Link  className="btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md"><MdAccessTimeFilled /> Timeline</Link>
+              <NavLink to={"/timeline"}  className="btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md"><MdAccessTimeFilled /> Timeline</NavLink>
             </li>
             <li>
-               <Link className="btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md"><ImStatsDots /> Stats</Link>
+               <NavLink to={"/stats"} className="btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md"><ImStatsDots /> Stats</NavLink>
             </li>
           </ul>
         </div>

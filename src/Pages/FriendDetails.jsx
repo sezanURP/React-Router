@@ -16,7 +16,7 @@ import { useLoaderData, useParams } from 'react-router';
 const FriendDetails = () => {
   const friendData= useLoaderData();
   const {id}= useParams()
-  console.log(friendData, id)
+  
     const expectedFriend = friendData.find((f) => f.id == id);
   return (
     <div>
@@ -50,7 +50,7 @@ const FriendDetails = () => {
             </p>
 
             <p className="text-gray-500 text-sm mt-4">
-              Preferred: <span className="font-medium">{expectedFriend.preferred || "email"}</span>
+              Preferred: <span className="font-medium">{expectedFriend.email}</span>
             </p>
           </div>
         </div>

@@ -6,6 +6,8 @@ import { RouterProvider } from 'react-router/dom'
 import Root from './Layout/Root'
 import Home from './Pages/Home'
 import FriendDetails from './Pages/FriendDetails'
+import TimeLine from './Pages/TimeLine'
+import ErrorPage from './Pages/ErrorPage'
 
 const router =createBrowserRouter([
   {
@@ -17,12 +19,17 @@ const router =createBrowserRouter([
         element: <Home/>
       },
       {
+        path:"/timeline",
+        element: <TimeLine/>
+      },
+      {
         path: "/friend/:id",
         element: <FriendDetails/>,
         loader: ()=>fetch("/FriendsData.json")
       }
 
-    ]
+    ],
+    errorElement:<ErrorPage/>
 
   }
 
