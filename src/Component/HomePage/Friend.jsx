@@ -1,4 +1,5 @@
 import React, { use } from "react";
+import { Link } from "react-router";
 
 const friendsPromise = fetch("/FriendsData.json").then((data) => data.json());
 
@@ -12,9 +13,10 @@ const Friend = () => {
       </h2>
       <div className="container grid grid-cols-2 md:grid-cols-4 mt-10 w-[95%] mx-auto gap-y-5">
         {friendData.map((friend) => {
-          console.log(friend);
+        
+          
           return (
-            <div className="bg-white rounded-3xl p-8 shadow-sm max-w-sm mx-auto text-center">
+            <Link to={`/friend/${friend.id}`} className="bg-white rounded-3xl p-8 shadow-sm max-w-sm mx-auto text-center">
               <div className="flex justify-center mb-6">
                 <img
                   src={friend.picture}
@@ -55,7 +57,7 @@ const Friend = () => {
                   {friend.status}
                 </span>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>
