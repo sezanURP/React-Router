@@ -4,6 +4,7 @@ import Footer from '../Component/Footer/Footer';
 import { Outlet } from 'react-router';
 import Home from '../Pages/Home';
 import TimeLine from '../Pages/TimeLine';
+import Stats from '../Pages/Stats';
 
 const Root = () => {
    return (
@@ -12,6 +13,7 @@ const Root = () => {
         <Outlet>
          <Home/>
          <TimeLine/>
+         <Stats/>
         </Outlet>
          <Footer/>
       </div>

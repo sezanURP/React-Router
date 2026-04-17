@@ -33,7 +33,7 @@ const Footer = () => {
       <div className="container flex justify-around pb-7 border-t border-dashed pt-5" >
         <p>&copy; 2026 KeenKeeper. All rights Reserved.</p>
 
-        <ul className="flex justify-between gap-8">
+        <ul className="flex justify-between  lg:gap-8">
           <li>Privacy Policy</li>
           <li>Terms of Services</li>
           <li>Cookies</li>
