@@ -14,13 +14,13 @@ const NavBar = () => {
         <div className="flex-none">
           <ul className="menu menu-horizontal  gap-3">
             <li>
-              <NavLink to={"/"} className="btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md "><IoHome /> Home</NavLink>
+              <NavLink to={"/"} className={({isActive})=> `btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md font-semibold rounded-xl   ${isActive ? "bg-green-800 text-white" : ""}`}><IoHome /> Home</NavLink>
             </li>
             <li>
-              <NavLink to={"/timeline"}  className="btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md"><MdAccessTimeFilled /> Timeline</NavLink>
+              <NavLink to={"/timeline"}   className={({isActive})=> `btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md font-semibold rounded-xl   ${isActive ? "bg-green-800 text-white" : ""}`}><MdAccessTimeFilled /> Timeline</NavLink>
             </li>
             <li>
-               <NavLink to={"/stats"} className="btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md"><ImStatsDots /> Stats</NavLink>
+               <NavLink to={"/stats"}  className={({isActive})=> `btn btn-xs text-[#64748b] sm:btn-sm md:btn-md lg:btn-md xl:btn-md font-semibold rounded-xl   ${isActive ? "bg-green-800 text-white" : ""}`}><ImStatsDots /> Stats</NavLink>
             </li>
           </ul>
         </div>

@@ -11,11 +11,19 @@ import {
   MdDelete 
 } from "react-icons/md";
 import { useLoaderData, useParams } from 'react-router';
+import { useTimeline } from '../Context/TimelineContext';
+import { toast } from 'react-toastify';
 
 
 const FriendDetails = () => {
   const friendData= useLoaderData();
   const {id}= useParams()
+
+  const { addEvent } = useTimeline();
+  const handleCheckIn = (type) => {
+    addEvent(type, expectedFriend.name);
+    toast(`Successfully started  ${type}  with ${expectedFriend.name}`)
+  };
   
     const expectedFriend = friendData.find((f) => f.id == id);
   return (
@@ -89,7 +97,7 @@ const FriendDetails = () => {
                   Connect every <span className="font-semibold">{expectedFriend.goal} days</span>
                 </p>
               </div>
-              <button className="flex items-center gap-2 text-sm font-medium text-emerald-600 hover:text-emerald-700 transition">
+              <button className="flex items-center p-2 rounded-xl gap-2 text-sm font-medium text-emerald-600 hover:bg-gray-200 transition">
                 <FaEdit /> Edit
               </button>
             </div>
@@ -100,15 +108,15 @@ const FriendDetails = () => {
 
             {/* Left - Quick Actions */}
             <div className="bg-white rounded-3xl p-6 shadow-sm space-y-3">
-              <button className="w-full flex items-center gap-3 text-left px-5 py-4 hover:bg-gray-50 rounded-2xl transition">
+              <button className="w-full flex items-center gap-3 text-left px-5 py-4 hover:bg-gray-200 rounded-2xl transition">
                 <MdSnooze className="text-xl text-gray-600" />
                 <span>Snooze 2 Weeks</span>
               </button>
-              <button className="w-full flex items-center gap-3 text-left px-5 py-4 hover:bg-gray-50 rounded-2xl transition">
+              <button className="w-full flex items-center gap-3 text-left px-5 py-4 hover:bg-gray-200 rounded-2xl transition">
                 <MdArchive className="text-xl text-gray-600" />
                 <span>Archive</span>
               </button>
-              <button className="w-full flex items-center gap-3 text-left px-5 py-4 hover:bg-red-50 text-red-600 rounded-2xl transition">
+              <button className="w-full flex items-center gap-3 text-left px-5 py-4 hover:bg-red-200 text-red-600 rounded-2xl transition">
                 <MdDelete className="text-xl" />
                 <span>Delete</span>
               </button>
@@ -118,18 +126,19 @@ const FriendDetails = () => {
             <div className="bg-white rounded-3xl p-6 shadow-sm">
               <h3 className="font-semibold mb-4">Quick Check-In</h3>
               <div className="grid grid-cols-3 gap-4">
-                <button className="flex flex-col items-center gap-2 py-5 hover:bg-gray-50 rounded-2xl transition">
-                  <FaPhone className="text-2xl text-emerald-600" />
+                <button onClick={() => handleCheckIn('Call')} className="flex flex-col items-center gap-2 py-5 hover:bg-gray-200 rounded-2xl transition">
+                  <FaPhone className="text-2xl text-emerald-800" />
                   <span className="text-sm font-medium">Call</span>
                 </button>
-                <button className="flex flex-col items-center gap-2 py-5 hover:bg-gray-50 rounded-2xl transition">
-                  <FaComment className="text-2xl text-emerald-600" />
+                <button onClick={() => handleCheckIn('Text')} className="flex flex-col items-center gap-2 py-5 hover:bg-gray-200 rounded-2xl transition">
+                  <FaComment className="text-2xl text-emerald-800" />
                   <span className="text-sm font-medium">Text</span>
                 </button>
-                <button className="flex flex-col items-center gap-2 py-5 hover:bg-gray-50 rounded-2xl transition">
-                  <FaVideo className="text-2xl text-emerald-600" />
+                <button onClick={() => handleCheckIn('Video')} className="flex flex-col items-center gap-2 py-5 hover:bg-gray-200 rounded-2xl transition">
+                  <FaVideo className="text-2xl text-emerald-800" />
                   <span className="text-sm font-medium">Video</span>
                 </button>
+                
               </div>
             </div>
           </div>
