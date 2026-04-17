@@ -1,10 +1,15 @@
-import React, { use } from "react";
+import React from "react";
+import { use } from "react";
 import { Link } from "react-router";
+
+
 
 const friendsPromise = fetch("/FriendsData.json").then((data) => data.json());
 
 const Friend = () => {
   const friendData = use(friendsPromise);
+
+
 
   return (
     <div>

@@ -7,6 +7,7 @@ import FriendDetails from "./Pages/FriendDetails";
 import TimeLine from "./Pages/TimeLine";
 import ErrorPage from "./Pages/ErrorPage";
 import { TimelineProvider } from "./Context/TimelineContext";
+import Stats from "./Pages/Stats";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
         element: <FriendDetails />,
         loader: () => fetch("/FriendsData.json"),
       },
+
+      {
+        path: "/stats",
+        element: <Stats/>,
+      }
     ],
     errorElement: <ErrorPage />,
   },
